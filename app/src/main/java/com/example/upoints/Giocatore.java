@@ -5,7 +5,8 @@ import android.os.Parcelable;
 
 public class Giocatore implements Parcelable {
     private String nome;
-    private int punteggio,maxp,minp,avgp;
+    private int punteggio,maxp,minp;
+    private float avgp;
 
     public Giocatore(String n)
     {
@@ -22,7 +23,7 @@ public class Giocatore implements Parcelable {
         punteggio=source.readInt();
         maxp=source.readInt();
         minp=source.readInt();
-        avgp=source.readInt();
+        avgp=source.readFloat();
     }
 
     public int getMaxp() {
@@ -34,11 +35,11 @@ public class Giocatore implements Parcelable {
         return minp;
     }
 
-    public int getAvgp() {
+    public float getAvgp() {
         return avgp;
     }
 
-    public void setAvgp(int avgp) {
+    public void setAvgp(float avgp) {
         this.avgp = avgp;
     }
 
@@ -71,7 +72,7 @@ public class Giocatore implements Parcelable {
         dest.writeInt(punteggio);
         dest.writeInt(maxp);
         dest.writeInt(minp);
-        dest.writeInt(avgp);
+        dest.writeFloat(avgp);
 
 
     }

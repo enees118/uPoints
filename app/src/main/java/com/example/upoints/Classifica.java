@@ -89,11 +89,13 @@ public class Classifica extends AppCompatActivity {
         img_quarto.setVisibility(View.INVISIBLE);
 
         part=getIntent();
+
         n_gioc=part.getIntExtra("N_gioc",1);
         lim=part.getIntExtra("Limite",0);
         mano=part.getIntExtra("Mano",0);
         gioc1=(Giocatore) part.getParcelableExtra("Gioc1");
         primo=gioc1;
+
         if(n_gioc>1)
         {
             gioc2=(Giocatore) part.getParcelableExtra("Gioc2");
@@ -113,7 +115,7 @@ public class Classifica extends AppCompatActivity {
             if(n_gioc>2)
             {
                 gioc3=(Giocatore) part.getParcelableExtra("Gioc3");
-                btn_info3.setVisibility(View.INVISIBLE);
+                btn_info3.setVisibility(View.VISIBLE);
                 if(primo.getPunteggio()>gioc3.getPunteggio())
                 {
                     if(secondo.getPunteggio()>gioc3.getPunteggio())
@@ -165,7 +167,7 @@ public class Classifica extends AppCompatActivity {
                 if(n_gioc>3)
                 {
                     gioc4=(Giocatore) part.getParcelableExtra("Gioc4");
-                    btn_info4.setVisibility(View.INVISIBLE);
+                    btn_info4.setVisibility(View.VISIBLE);
                     if(primo.getPunteggio()>gioc4.getPunteggio())
                     {
                         if(secondo.getPunteggio()>gioc4.getPunteggio())
@@ -310,13 +312,17 @@ public class Classifica extends AppCompatActivity {
                         img_silver.setImageResource(R.drawable.gold_medal);
                         if(pr_se_te==true)
                         {
-                            img_bronze.setImageResource(R.drawable.gold_trophy);
+                            img_bronze.setImageResource(R.drawable.gold_medal);
                         }
                         txt_vincitore.setText("PAREGGIO");
                     }else if(se_te==true)
                     {
                         txt_vincitore.setText("HA VINTO: "+primo.getNome());
                         img_bronze.setImageResource(R.drawable.silver_medal);
+                    }else
+                    {
+                        txt_vincitore.setText("HA VINTO: "+primo.getNome());
+                        img_bronze.setImageResource(R.drawable.bronze_medal);
                     }
                 }
             }else
@@ -349,7 +355,8 @@ public class Classifica extends AppCompatActivity {
                 bd=new AlertDialog.Builder(Classifica.this);
                 bd.setCancelable(true);
                 bd.setTitle("STATISTICHE "+primo.getNome());
-                String temp="MAX PUNTI:"+String.valueOf(primo.getMaxp());
+                Float avg1=(float) primo.getPunteggio()/(float)mano;
+                String temp="MAX PUNTI:"+ primo.getMaxp() +"\nMIN PUNTI:"+primo.getMinp()+"\nMEDIA PUNTI:"+avg1;
                 bd.setMessage(temp);
                 bd.setNeutralButton("CHIUDI", new DialogInterface.OnClickListener() {
                     @Override
@@ -369,11 +376,12 @@ public class Classifica extends AppCompatActivity {
                 bd=new AlertDialog.Builder(Classifica.this);
                 bd.setCancelable(true);
                 bd.setTitle("STATISTICHE "+secondo.getNome());
-                String temp="";
+                String temp="MAX PUNTI:"+ secondo.getMaxp() +"\nMIN PUNTI:"+secondo.getMinp()+"\nMEDIA PUNTI:"+secondo.getAvgp();
                 bd.setMessage(temp);
                 bd.setNeutralButton("CHIUDI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
 
                     }
                 });
@@ -388,11 +396,12 @@ public class Classifica extends AppCompatActivity {
                 bd=new AlertDialog.Builder(Classifica.this);
                 bd.setCancelable(true);
                 bd.setTitle("STATISTICHE "+terzo.getNome());
-                String temp="";
+                String temp="MAX PUNTI:"+ terzo.getMaxp() +"\nMIN PUNTI:"+terzo.getMinp()+"\nMEDIA PUNTI:"+terzo.getAvgp();
                 bd.setMessage(temp);
                 bd.setNeutralButton("CHIUDI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
 
                     }
                 });
@@ -407,11 +416,12 @@ public class Classifica extends AppCompatActivity {
                 bd=new AlertDialog.Builder(Classifica.this);
                 bd.setCancelable(true);
                 bd.setTitle("STATISTICHE "+quarto.getNome());
-                String temp="";
+                String temp="MAX PUNTI:"+ quarto.getMaxp() +"\nMIN PUNTI:"+quarto.getMinp()+"\nMEDIA PUNTI:"+quarto.getAvgp();
                 bd.setMessage(temp);
                 bd.setNeutralButton("CHIUDI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
 
                     }
                 });
