@@ -69,6 +69,9 @@ public class Giocatore implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nome);
         dest.writeInt(punteggio);
+        dest.writeInt(maxp);
+        dest.writeInt(minp);
+        dest.writeInt(avgp);
 
 
     }
