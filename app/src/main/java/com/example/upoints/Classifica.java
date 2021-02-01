@@ -354,6 +354,7 @@ public class Classifica extends AppCompatActivity {
                 bd.setNeutralButton("CHIUDI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
 
                     }
                 });

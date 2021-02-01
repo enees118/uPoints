@@ -289,31 +289,55 @@ public class Partita extends AppCompatActivity {
                                     if(ed_punt2.getText().toString().equals(""))
                                     {
                                         gioc2.IncrementaPunt(0);
+                                        if(gioc2.getMaxp()<0)
+                                        {
+                                            gioc2.setMaxp(0);
+                                        }
                                     }else
                                     {
                                         gioc2.IncrementaPunt(Integer.parseInt(ed_punt2.getText().toString()));
                                         ed_punt2.setText("");
+                                        if(gioc2.getMaxp()<Integer.parseInt(ed_punt2.getText().toString()))
+                                        {
+                                            gioc2.setMaxp(Integer.parseInt(ed_punt2.getText().toString()));
+                                        }
                                     }
                                     if(n_gioc>2)
                                     {
                                         if(ed_punt3.getText().toString().equals(""))
                                         {
                                             gioc3.IncrementaPunt(0);
+                                            if(gioc3.getMaxp()<0)
+                                            {
+                                                gioc3.setMaxp(0);
+                                            }
+
                                         }else
                                         {
                                             gioc3.IncrementaPunt(Integer.parseInt(ed_punt3.getText().toString()));
                                             ed_punt3.setText("");
+                                            if(gioc3.getMaxp()<Integer.parseInt(ed_punt3.getText().toString()))
+                                            {
+                                                gioc3.setMaxp(Integer.parseInt(ed_punt3.getText().toString()));
+                                            }
                                         }
                                         if(n_gioc>3)
                                         {
                                             if(ed_punt4.getText().toString().equals(""))
                                             {
                                                 gioc4.IncrementaPunt(0);
+                                                if(gioc4.getMaxp()<0)
+                                                {
+                                                    gioc4.setMaxp(0);
+                                                }
                                             }else
                                             {
                                                 gioc4.IncrementaPunt(Integer.parseInt(ed_punt4.getText().toString()));
                                                 ed_punt4.setText("");
-
+                                                if(gioc4.getMaxp()<Integer.parseInt(ed_punt4.getText().toString()))
+                                                {
+                                                    gioc4.setMaxp(Integer.parseInt(ed_punt4.getText().toString()));
+                                                }
                                                 if(gioc1.getPunteggio()>=lim || gioc2.getPunteggio()>=lim || gioc3.getPunteggio()>=lim || gioc4.getPunteggio()>=lim)
                                                 {
                                                     classifica.putExtra("Gioc1",gioc1);
