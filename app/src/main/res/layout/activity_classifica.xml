@@ -111,7 +111,7 @@
         android:id="@+id/gold"
         android:layout_width="96dp"
         android:layout_height="107dp"
-        android:src="@drawable/gold_trophy"
+        android:src="@drawable/gold_medal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.165"

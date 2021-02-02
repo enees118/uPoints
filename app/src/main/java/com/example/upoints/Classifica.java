@@ -262,10 +262,15 @@ public class Classifica extends AppCompatActivity {
                                 img_quarto.setVisibility(View.VISIBLE);
                                 img_quarto.setImageResource(R.drawable.gold_medal);
                             }
+                        }else if(te_qu)
+                        {
+                            img_quarto.setVisibility(View.VISIBLE);
+                            img_quarto.setImageResource(R.drawable.silver_medal);
+                            img_bronze.setImageResource(R.drawable.silver_medal);
                         }
                     }else if(se_te==true)
                     {
-                        txt_vincitore.setText("HA VINTO:"+primo);
+                        txt_vincitore.setText("HA VINTO:"+primo.getNome());
                         img_bronze.setImageResource(R.drawable.silver_medal);
                         if(se_te_qu==true)
                         {
@@ -274,12 +279,12 @@ public class Classifica extends AppCompatActivity {
                         }
                     }else if(te_qu==true)
                     {
-                        txt_vincitore.setText("HA VINTO:"+primo);
+                        txt_vincitore.setText("HA VINTO:"+primo.getNome());
                         img_quarto.setVisibility(View.VISIBLE);
                         img_quarto.setImageResource(R.drawable.bronze_medal);
                     }else
                     {
-                        txt_vincitore.setText("HA VINTO:"+primo);
+                        txt_vincitore.setText("HA VINTO:"+primo.getNome());
                     }
 
 
@@ -329,6 +334,9 @@ public class Classifica extends AppCompatActivity {
                     txt_vincitore.setText("PAREGGIO");
                     img_gold.setVisibility(View.INVISIBLE);
                     img_silver.setVisibility(View.INVISIBLE);
+                }else
+                {
+                    txt_vincitore.setText("HA VINTO: "+primo.getNome());
                 }
             }
         }else
