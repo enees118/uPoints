@@ -50,13 +50,6 @@ public class Classifica extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classifica);
 
-        ImageButton btn_info1=findViewById(R.id.info1);
-        ImageButton btn_info2=findViewById(R.id.info2);
-        ImageButton btn_info3=findViewById(R.id.info3);
-        ImageButton btn_info4=findViewById(R.id.info4);
-        btn_info2.setVisibility(View.INVISIBLE);
-        btn_info3.setVisibility(View.INVISIBLE);
-        btn_info4.setVisibility(View.INVISIBLE);
 
 
         pr_se=false;
@@ -99,7 +92,6 @@ public class Classifica extends AppCompatActivity {
         if(n_gioc>1)
         {
             gioc2=(Giocatore) part.getParcelableExtra("Gioc2");
-            btn_info2.setVisibility(View.VISIBLE);
             if(primo.getPunteggio()>gioc2.getPunteggio())
             {
                 secondo=gioc2;
@@ -115,7 +107,6 @@ public class Classifica extends AppCompatActivity {
             if(n_gioc>2)
             {
                 gioc3=(Giocatore) part.getParcelableExtra("Gioc3");
-                btn_info3.setVisibility(View.VISIBLE);
                 if(primo.getPunteggio()>gioc3.getPunteggio())
                 {
                     if(secondo.getPunteggio()>gioc3.getPunteggio())
@@ -167,7 +158,6 @@ public class Classifica extends AppCompatActivity {
                 if(n_gioc>3)
                 {
                     gioc4=(Giocatore) part.getParcelableExtra("Gioc4");
-                    btn_info4.setVisibility(View.VISIBLE);
                     if(primo.getPunteggio()>gioc4.getPunteggio())
                     {
                         if(secondo.getPunteggio()>gioc4.getPunteggio())
@@ -348,87 +338,5 @@ public class Classifica extends AppCompatActivity {
             txt_primo.setText(primo.getNome());
             txt_punt_primo.setText(String.valueOf(primo.getPunteggio()));
         }
-
-        btn_info1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd=new AlertDialog.Builder(Classifica.this);
-                bd.setCancelable(true);
-                bd.setTitle("STATISTICHE "+primo.getNome());
-                Float avg1=(float) primo.getPunteggio()/(float)mano;
-                String temp="MAX PUNTI:"+ primo.getMaxp() +"\nMIN PUNTI:"+primo.getMinp()+"\nMEDIA PUNTI:"+avg1;
-                bd.setMessage(temp);
-                bd.setNeutralButton("CHIUDI", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-
-                    }
-                });
-                alert=bd.create();
-                alert.show();
-            }
-        });
-
-        btn_info2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd=new AlertDialog.Builder(Classifica.this);
-                bd.setCancelable(true);
-                bd.setTitle("STATISTICHE "+secondo.getNome());
-                String temp="MAX PUNTI:"+ secondo.getMaxp() +"\nMIN PUNTI:"+secondo.getMinp()+"\nMEDIA PUNTI:"+secondo.getAvgp();
-                bd.setMessage(temp);
-                bd.setNeutralButton("CHIUDI", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-
-                    }
-                });
-                alert=bd.create();
-                alert.show();
-            }
-        });
-
-        btn_info3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd=new AlertDialog.Builder(Classifica.this);
-                bd.setCancelable(true);
-                bd.setTitle("STATISTICHE "+terzo.getNome());
-                String temp="MAX PUNTI:"+ terzo.getMaxp() +"\nMIN PUNTI:"+terzo.getMinp()+"\nMEDIA PUNTI:"+terzo.getAvgp();
-                bd.setMessage(temp);
-                bd.setNeutralButton("CHIUDI", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-
-                    }
-                });
-                alert=bd.create();
-                alert.show();
-            }
-        });
-
-        btn_info4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bd=new AlertDialog.Builder(Classifica.this);
-                bd.setCancelable(true);
-                bd.setTitle("STATISTICHE "+quarto.getNome());
-                String temp="MAX PUNTI:"+ quarto.getMaxp() +"\nMIN PUNTI:"+quarto.getMinp()+"\nMEDIA PUNTI:"+quarto.getAvgp();
-                bd.setMessage(temp);
-                bd.setNeutralButton("CHIUDI", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-
-                    }
-                });
-                alert=bd.create();
-                alert.show();
-
-            }
-        });
     }
 }

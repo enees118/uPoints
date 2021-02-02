@@ -270,49 +270,21 @@ public class Partita extends AppCompatActivity {
                                 end=false;
                                 gioc1.IncrementaPunt(Integer.parseInt(ed_punt1.getText().toString()));
                                 txt_tot1.setText(String.valueOf(gioc1.getPunteggio()));
-                                if(gioc1.getMaxp()<Integer.parseInt(ed_punt1.getText().toString()))
-                                {
-                                    gioc1.setMaxp(Integer.parseInt(ed_punt1.getText().toString()));
-                                }else if(gioc1.getMinp()>Integer.parseInt(ed_punt1.getText().toString()))
-                                {
-                                    gioc1.setMinp(Integer.parseInt(ed_punt1.getText().toString()));
-                                }
                                 ed_punt1.setText("");
                                 if(n_gioc>1)
                                 {
                                     gioc2.IncrementaPunt(Integer.parseInt(ed_punt2.getText().toString()));
                                     txt_tot2.setText(String.valueOf(gioc2.getPunteggio()));
-                                    if(gioc2.getMaxp()<Integer.parseInt(ed_punt2.getText().toString()))
-                                    {
-                                        gioc2.setMaxp(Integer.parseInt(ed_punt2.getText().toString()));
-                                    }else if(gioc2.getMinp()>Integer.parseInt(ed_punt2.getText().toString()))
-                                    {
-                                        gioc2.setMinp(Integer.parseInt(ed_punt2.getText().toString()));
-                                    }
                                     ed_punt2.setText("");
                                     if(n_gioc>2)
                                     {
                                         gioc3.IncrementaPunt(Integer.parseInt(ed_punt3.getText().toString()));
                                         txt_tot3.setText(String.valueOf(gioc3.getPunteggio()));
-                                        if(gioc3.getMaxp()<Integer.parseInt(ed_punt3.getText().toString()))
-                                        {
-                                            gioc3.setMaxp(Integer.parseInt(ed_punt3.getText().toString()));
-                                        }else if(gioc3.getMinp()>Integer.parseInt(ed_punt3.getText().toString()))
-                                        {
-                                            gioc3.setMinp(Integer.parseInt(ed_punt3.getText().toString()));
-                                        }
                                         ed_punt3.setText("");
                                         if(n_gioc>3)
                                         {
                                             gioc4.IncrementaPunt(Integer.parseInt(ed_punt4.getText().toString()));
                                             txt_tot4.setText(String.valueOf(gioc4.getPunteggio()));
-                                            if(gioc4.getMaxp()<Integer.parseInt(ed_punt4.getText().toString()))
-                                            {
-                                                gioc4.setMaxp(Integer.parseInt(ed_punt4.getText().toString()));
-                                            }else if(gioc4.getMinp()>Integer.parseInt(ed_punt4.getText().toString()))
-                                            {
-                                                gioc4.setMinp(Integer.parseInt(ed_punt4.getText().toString()));
-                                            }
                                             ed_punt4.setText("");
                                             if(gioc1.getPunteggio()>=lim || gioc2.getPunteggio()>=lim || gioc3.getPunteggio()>=lim || gioc4.getPunteggio()>=lim)
                                             {
@@ -375,46 +347,19 @@ public class Partita extends AppCompatActivity {
                             {
                                 gioc1.IncrementaPunt(Integer.parseInt(ed_punt1.getText().toString()));
                                 txt_tot1.setText(String.valueOf(gioc1.getPunteggio()));
-                                if(gioc1.getMaxp()<Integer.parseInt(ed_punt1.getText().toString()))
-                                {
-                                    gioc1.setMaxp(Integer.parseInt(ed_punt1.getText().toString()));
-                                }else if(gioc1.getMinp()>Integer.parseInt(ed_punt1.getText().toString()))
-                                {
-                                    gioc1.setMinp(Integer.parseInt(ed_punt1.getText().toString()));
-                                }
                                 ed_punt1.setText("");
                                 if(n_gioc>1) {
                                     gioc2.IncrementaPunt(Integer.parseInt(ed_punt2.getText().toString()));
                                     txt_tot2.setText(String.valueOf(gioc2.getPunteggio()));
-                                    if(gioc2.getMaxp()<Integer.parseInt(ed_punt2.getText().toString()))
-                                    {
-                                        gioc2.setMaxp(Integer.parseInt(ed_punt2.getText().toString()));
-                                    }else if(gioc2.getMinp()>Integer.parseInt(ed_punt2.getText().toString()))
-                                    {
-                                        gioc2.setMinp(Integer.parseInt(ed_punt2.getText().toString()));
-                                    }
+
                                     ed_punt2.setText("");
                                     if (n_gioc > 2) {
                                         gioc3.IncrementaPunt(Integer.parseInt(ed_punt3.getText().toString()));
                                         txt_tot3.setText(String.valueOf(gioc3.getPunteggio()));
-                                        if(gioc3.getMaxp()<Integer.parseInt(ed_punt3.getText().toString()))
-                                        {
-                                            gioc3.setMaxp(Integer.parseInt(ed_punt3.getText().toString()));
-                                        }else if(gioc3.getMinp()>Integer.parseInt(ed_punt3.getText().toString()))
-                                        {
-                                            gioc3.setMinp(Integer.parseInt(ed_punt3.getText().toString()));
-                                        }
                                         ed_punt3.setText("");
                                         if (n_gioc > 3) {
                                             gioc4.IncrementaPunt(Integer.parseInt(ed_punt4.getText().toString()));
                                             txt_tot4.setText(String.valueOf(gioc4.getPunteggio()));
-                                            if(gioc4.getMaxp()<Integer.parseInt(ed_punt4.getText().toString()))
-                                            {
-                                                gioc4.setMaxp(Integer.parseInt(ed_punt4.getText().toString()));
-                                            }else if(gioc4.getMinp()>Integer.parseInt(ed_punt4.getText().toString()))
-                                            {
-                                                gioc4.setMinp(Integer.parseInt(ed_punt4.getText().toString()));
-                                            }
                                             ed_punt4.setText("");
                                         }
                                     }
