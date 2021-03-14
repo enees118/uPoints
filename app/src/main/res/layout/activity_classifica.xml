@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/vincitore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HA VINTO:"
+        android:textColor="@color/purple_500"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="000"
+        android:textColor="@color/purple_500"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,74 +35,95 @@
         app:layout_constraintVertical_bias="0.746" />
 
     <TextView
-        android:id="@+id/punt_terzo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.847"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.559" />
-
-    <TextView
-        android:id="@+id/punt_secondo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.847"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401" />
-
-    <TextView
         android:id="@+id/terzo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TERZO"
+        android:textColor="@color/purple_500"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.429"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.557" />
+
+    <TextView
+        android:id="@+id/punt_terzo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000"
+        android:textColor="@color/purple_500"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.555" />
 
     <TextView
         android:id="@+id/secondo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SECONDO"
+        android:textColor="@color/purple_500"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
+        app:layout_constraintVertical_bias="0.371" />
+
+    <TextView
+        android:id="@+id/punt_secondo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000"
+        android:textColor="@color/purple_500"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373" />
 
     <TextView
         android:id="@+id/primo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PRIMO"
+        android:textColor="@color/purple_500"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214" />
+        app:layout_constraintVertical_bias="0.211" />
+
+    <TextView
+        android:id="@+id/punt_primo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000"
+        android:textColor="@color/purple_500"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.209" />
 
     <TextView
         android:id="@+id/quarto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="QUARTO"
+        android:textColor="@color/purple_500"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,19 +157,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.574" />
 
-    <TextView
-        android:id="@+id/punt_primo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.847"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213" />
-
     <ImageView
         android:id="@+id/medal_quarto"
         android:layout_width="100dp"
@@ -170,5 +180,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.375" />
+
+    <ImageButton
+        android:id="@+id/menu"
+        android:layout_width="101dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/grey"
+        android:scaleType="fitCenter"
+        android:tint="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quarto"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

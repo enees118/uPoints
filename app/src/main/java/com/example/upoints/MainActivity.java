@@ -145,19 +145,29 @@ public class MainActivity extends AppCompatActivity {
         lbl_tempo.setEnabled(false);
         btn_prox.setEnabled(false);
         btn_prec.setEnabled(false);
+        btn_prec.setBackgroundColor(getResources().getColor(R.color.grey_scuro));
+        btn_prox.setBackgroundColor(getResources().getColor(R.color.grey_scuro));
+        et_temp.setTextColor(getResources().getColor(R.color.grey_scuro));
+        lbl_tempo.setTextColor(getResources().getColor(R.color.grey_scuro));
         sw_temp.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if(isChecked==true)
             {
-                lbl_tempo.setEnabled(true);
                 btn_prox.setEnabled(true);
                 btn_prec.setEnabled(true);
-                et_temp.setEnabled(true);
+                btn_prec.setBackgroundColor(getResources().getColor(R.color.purple_500));
+                btn_prox.setBackgroundColor(getResources().getColor(R.color.purple_500));
+                et_temp.setTextColor(getResources().getColor(R.color.purple_500));
+                lbl_tempo.setTextColor(getResources().getColor(R.color.purple_500));
             }else
             {
-                lbl_tempo.setEnabled(false);
+
                 btn_prox.setEnabled(false);
                 btn_prec.setEnabled(false);
-                et_temp.setEnabled(false);
+                btn_prec.setBackgroundColor(getResources().getColor(R.color.grey_scuro));
+                btn_prox.setBackgroundColor(getResources().getColor(R.color.grey_scuro));
+                et_temp.setTextColor(getResources().getColor(R.color.grey_scuro));
+                lbl_tempo.setTextColor(getResources().getColor(R.color.grey_scuro));
+
             }
         });
         sw_lim.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -166,11 +176,13 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked==true)
                 {
                     ed_lim.setEnabled(true);
-                    et_lim.setEnabled(true);
+                    et_lim.setTextColor(getResources().getColor(R.color.purple_500));
+                    ed_lim.setTextColor(getResources().getColor(R.color.purple_500));
                 }else
                 {
                     ed_lim.setEnabled(false);
-                    et_lim.setEnabled(false);
+                    et_lim.setTextColor(getResources().getColor(R.color.grey_scuro));
+                    ed_lim.setTextColor(getResources().getColor(R.color.grey_scuro));
                 }
             }
         });
@@ -493,9 +505,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+
         });
-
-
     }
 
     private BroadcastReceiver mioBroadcastService=new BroadcastReceiver() {

@@ -29,6 +29,7 @@ public class Partita extends AppCompatActivity {
     public String time_left;
     int ss,mm;
     private Button btn_next;
+    TextView txt_mano;
 
     @Override
     public void onBackPressed() {
@@ -78,8 +79,8 @@ public class Partita extends AppCompatActivity {
         txt_tot3.setText("0");
         txt_tot4.setText("0");
 
-        TextView txt_mano=findViewById(R.id.mano);
-
+        //TextView txt_mano=findViewById(R.id.mano);
+        txt_mano=findViewById(R.id.mano);
         TextView lbl_gioc1=findViewById(R.id.gioc1);
         TextView lbl_gioc2=findViewById(R.id.gioc2);
         TextView lbl_gioc3=findViewById(R.id.gioc3);
@@ -106,7 +107,7 @@ public class Partita extends AppCompatActivity {
         if(there_lim)
         {
             lim=menu.getIntExtra("Limite",0);
-            lbl_lim.setText("GOAL:"+String.valueOf(lim));
+            lbl_lim.setText("GOAL: "+String.valueOf(lim));
             lbl_lim.setVisibility(View.VISIBLE);
             classifica.putExtra("Limite?",true);
             classifica.putExtra("Limite",lim);
@@ -179,10 +180,11 @@ public class Partita extends AppCompatActivity {
             public void onClick(View v) {
                 if(btn_next.getText().toString().equals("FINISH"))
                 {
-                    mano++;
+
                     classifica=new Intent(Partita.this,Classifica.class);
                     classifica.putExtra("N_gioc",n_gioc);
                     classifica.putExtra("Gioc1",gioc1);
+                    gioc1.IncrementaPunt(Integer.parseInt(ed_punt1.getText().toString()));
                     classifica.putExtra("Mano",mano);
                     if(there_lim)
                     {
@@ -195,12 +197,15 @@ public class Partita extends AppCompatActivity {
                     classifica.putExtra("Tempo?",true);
                     if(n_gioc>1)
                     {
+                        gioc2.IncrementaPunt(Integer.parseInt(ed_punt2.getText().toString()));
                         classifica.putExtra("Gioc2",gioc2);
                         if(n_gioc>2)
                         {
+                            gioc3.IncrementaPunt(Integer.parseInt(ed_punt3.getText().toString()));
                             classifica.putExtra("Gioc3",gioc3);
                             if(n_gioc>3)
                             {
+                                gioc4.IncrementaPunt(Integer.parseInt(ed_punt4.getText().toString()));
                                 classifica.putExtra("Gioc4",gioc4);
                             }
                         }
@@ -435,6 +440,8 @@ public class Partita extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                        mano++;
+                        txt_mano.setText("MANO "+(mano));
                         btn_next.setText("FINISH");
 
                     }

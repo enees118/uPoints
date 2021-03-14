@@ -49,9 +49,14 @@ public class Classifica extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classifica);
-
-
-
+        ImageButton btn_menu=findViewById(R.id.menu);
+        btn_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menu=new Intent(Classifica.this,MainActivity.class);
+                startActivity(menu);
+            }
+        });
         pr_se=false;
         pr_se_te=false;
         pr_se_te_qu=false;
